@@ -68,6 +68,8 @@ public class InputValidation {
 	
 	public InputValidation() {
 
+		input.setTermInMonths(Constants.TERM_IN_MONTHS);
+		
 		enterLoanAmount();
 		
 		loanAmountValidation();

@@ -57,7 +57,6 @@ public class Remove {
 		//LendingNode to be deleted has two children
 		else if (focusNode.leftChild != null && focusNode.rightChild != null)
 		{
-			LowestRate lowestRate = new LowestRate();
 			// find its in-order successor LendingNode
 			LendingNode successor  = LowestRate.findLowestRateNode((focusNode.rightChild));
 

@@ -16,14 +16,12 @@ public class LendingInfoTree {
 		
 		LendingNode newNode = new LendingNode(lenderName, rate, lendingAmount);
 		
-		if(input.getRoot() == null) {
-			input.setRoot(newNode);
-		//if(root == null) {
-			//root = newNode;
+		if(Input.getRoot() == null) {
+			Input.setRoot(newNode);
+
 		}else {
 			//Set root as the Node we'll start from
-			//LendingNode focusNode = root;
-			LendingNode focusNode = input.getRoot();
+			LendingNode focusNode = Input.getRoot();
 			
 			while(true) {
 				

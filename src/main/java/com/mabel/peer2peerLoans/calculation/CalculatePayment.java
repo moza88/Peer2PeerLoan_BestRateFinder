@@ -1,32 +1,32 @@
 package com.mabel.peer2peerLoans.calculation;
 
+import org.apache.commons.math3.util.Precision;
+
+import com.mabel.peer2peerLoans.Input;
+
 public class CalculatePayment {
 	
-	private double totalRepayment;
 	private double monthlyRate;
 	
 	public double monthlyPayment(double interestRate, int termInMonths, int loanAmount) {
-	
-	    // Monthly interest rate 
-	    // is the yearly rate divided by 12
-	     
+		// Monthly interest rate is the yearly rate divided by 12
 	    monthlyRate = interestRate / 12.0;
-	    System.out.println("Monthly Rate: " + monthlyRate);
-	    // Calculate the monthly payment
-	    // Typically this formula is provided so 
-	    // we won't go into the details
+	    //System.out.println("Monthly Rate: " + monthlyRate);
 	     
-	    // The Math.pow() method is used calculate values raised to a power
-	     
-	    double monthlyPayment = 
-	       (loanAmount*monthlyRate) / (1-Math.pow(1+monthlyRate, -termInMonths));
+	    double monthlyPayment = (loanAmount*monthlyRate) / (1-Math.pow(1+monthlyRate, -termInMonths));
     
 	return monthlyPayment;
 	}
 	
 	public double totalRepayment(double monthlyPayment, int termInMonths, int loanAmount) {
-		//return totalRepayment = (monthlyPayment*termInMonths) + loanAmount;
-		return loanAmount * Math.pow((1 + monthlyRate/100),termInMonths);
+		double totalRepayment = 0;
+		
+		for(int months = 1; months <= termInMonths; months++) {
+			totalRepayment = loanAmount * Math.pow((1+ monthlyRate), months);
+	    }
+	      
+			return totalRepayment;
+
 	}
 	
 }

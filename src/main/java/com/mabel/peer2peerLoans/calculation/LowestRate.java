@@ -21,9 +21,7 @@ public class LowestRate {
         if (root.leftChild == null && root.lendingAmount > 0) {
         	return root.rate; //this is the minumum
         }
-    	System.out.println(root.lendingAmount);
-
-        System.out.println("Lowest Rate is " + root.leftChild);
+        //System.out.println("Lowest Rate is " + root.leftChild);
         return findLowestRate(root.leftChild);
     }
     
@@ -32,7 +30,6 @@ public class LowestRate {
     	if (root == null) {
         	System.out.println("We don't have any lenders");
             return lendingNode = null;
-
     	}
     	else if (root.leftChild == null) {
         	return root; //this is the minumum
@@ -42,7 +39,6 @@ public class LowestRate {
     
     /* Function to return least value */
     public Double findLowestRate() {
-        //return findLowestRate(lendingInfoTree.root);    
         return findLowestRate(Input.getRoot());          
 
     }
